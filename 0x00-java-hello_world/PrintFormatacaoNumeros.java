@@ -8,7 +8,7 @@ public class PrintFormatacaoNumeros {
         float valor = 7654.321f;
         DecimalFormat df = new DecimalFormat ("#,##0.00");
         String valorFormatado = df.format (valor);
-        System.out.println("Valor: R$" + valorFormatado);
+        System.out.println("Valor: R$ " + valorFormatado);
         String taxaFormatada = df.format (taxa);
         System.out.println("Taxa: " + taxaFormatada + "%");
     }
