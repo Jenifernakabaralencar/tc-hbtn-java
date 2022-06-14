@@ -8,11 +8,11 @@ public class InteiroPositivo {
         return valor;
     }
 
-    public void setValor(Integer valor) {
+    public void setValor(Integer valor) throws Exception{
         if (valor > 0) {
             this.valor = valor;
         }else {
-            throw new RuntimeException("Valor nao eh um valor inteiro positivo");
+            throw new Exception("Valor nao eh um valor inteiro positivo");
         }
 
     }
@@ -22,11 +22,11 @@ public class InteiroPositivo {
         this.valor = x;
     }
 
-    public InteiroPositivo(String y) {
+    public InteiroPositivo(String y) throws Exception{
 
             this.valor = Integer.parseInt(y);
             if (this.valor < 0){
-                throw new RuntimeException("Valor nao eh um valor inteiro positivo");
+                throw new Exception("Valor nao eh um valor inteiro positivo");
             }
     }
 
