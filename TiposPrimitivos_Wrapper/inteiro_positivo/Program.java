@@ -2,7 +2,7 @@ public class Program {
 
     public static void main(String[] args) {
         try {
-            InteiroPositivo inteiroPositivo = new InteiroPositivo("44");
+            InteiroPositivo inteiroPositivo = new InteiroPositivo("1");
             System.out.println(inteiroPositivo.getValor() + " - " + inteiroPositivo.ehPrimo());
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
