@@ -1,6 +1,9 @@
 import java.util.Scanner;
 
 public class InteiroPositivo {
+    
+    private Integer valor;
+    
     public Integer getValor() {
         return valor;
     }
@@ -14,8 +17,7 @@ public class InteiroPositivo {
 
     }
 
-    Integer valor;
-
+    
     public InteiroPositivo(int x) {
         this.valor = x;
     }
