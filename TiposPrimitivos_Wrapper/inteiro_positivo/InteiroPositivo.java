@@ -2,17 +2,17 @@ import java.util.Scanner;
 
 public class InteiroPositivo {
     
-    private Integer valor;
+    private int valor;
     
-    public Integer getValor() {
+    public int getValor() {
         return valor;
     }
 
-    public void setValor(Integer valor) throws Exception{
+    public void setValor(int valor) throws IllegalArgumentException{
         if (valor > 0) {
             this.valor = valor;
         }else {
-            throw new Exception("Valor nao eh um valor inteiro positivo");
+            throw new IllegalArgumentException("Valor nao eh um valor inteiro positivo");
         }
 
     }
@@ -22,11 +22,11 @@ public class InteiroPositivo {
         this.valor = x;
     }
 
-    public InteiroPositivo(String y) throws Exception{
+    public InteiroPositivo(String y) throws IllegalArgumentException{
 
             this.valor = Integer.parseInt(y);
             if (this.valor < 0){
-                throw new Exception("Valor nao eh um valor inteiro positivo");
+                throw new IllegalArgumentException("Valor nao eh um valor inteiro positivo");
             }
     }
 
@@ -35,8 +35,8 @@ public class InteiroPositivo {
             return false;
         }
         for (int x = 2; x < this.valor; x++) {
-            Integer resto = (this.valor % x);
-            if (resto.equals(0)) {
+            int resto = (this.valor % x);
+            if (resto == (0)) {
                 return false;
             }
         }
