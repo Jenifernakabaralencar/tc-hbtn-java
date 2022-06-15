@@ -1,5 +1,3 @@
-package Empresa;
-
 public class Program {
     public static void main(String[] args) {
         Endereco endereco = new Endereco("Rua Marechal Deodoro",
