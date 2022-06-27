@@ -38,15 +38,15 @@ public class Pedido {
            int quantidade = item.getQuantidade();
            double total = preco * quantidade;
 
-           System.out.printf("Tipo: %s  Titulo: %s  Preco: %.2f  Quant: %d  Total: %.2f \n",item.getProduto().getClass().getSimpleName(),titulo,preco,quantidade,total);
+           System.out.printf("Tipo: %s  Titulo: %s  Preco: %.2f  Quant: %d  Total: %.2f\n",item.getProduto().getClass().getSimpleName(),titulo,preco,quantidade,total);
        }
         System.out.println("----------------------------");
         double valorDesconto = valorTotal /100 * percentualDesconto;
-        System.out.printf("DESCONTO: %.2f \n", valorDesconto );
-        System.out.printf("TOTAL PRODUTOS: %.2f \n", valorTotal );
+        System.out.printf("DESCONTO: %.2f\n", valorDesconto );
+        System.out.printf("TOTAL PRODUTOS: %.2f\n", valorTotal );
         System.out.println("----------------------------");
         double valorPedido = valorTotal - valorDesconto;
-        System.out.printf("TOTAL PEDIDO: %.2f \n", valorPedido);
+        System.out.printf("TOTAL PEDIDO: %.2f\n", valorPedido);
         System.out.println("----------------------------");
     }
 }
