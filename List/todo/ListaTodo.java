@@ -7,14 +7,14 @@ public class ListaTodo {
         this.tarefas = new ArrayList<Tarefa>();
     }
 
-    public void adicionarTarefa(Tarefa novaTarefa) throws Exception {
+    public void adicionarTarefa(Tarefa novaTarefa) throws IllegalArgumentException {
         if (tarefas.isEmpty()){
             tarefas.add(novaTarefa);
         }else{
             for (int i = 0; i < tarefas.size(); i++) {
                 Tarefa t = tarefas.get(i);
                 if (t.getIdentificador() == novaTarefa.getIdentificador()){
-                    throw new Exception("Tarefa com identificador " + novaTarefa.getIdentificador() + " ja existente na lista");
+                    throw new IllegalArgumentException("Tarefa com identificador " + novaTarefa.getIdentificador() + " ja existente na lista");
                 }
             }tarefas.add(novaTarefa);
         }

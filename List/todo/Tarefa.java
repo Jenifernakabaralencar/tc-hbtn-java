@@ -3,14 +3,14 @@ public class Tarefa {
     private boolean estahFeita;
     private int identificador;
 
-    public Tarefa(String descricao, int identificador) throws Exception {
+    public Tarefa(String descricao, int identificador) throws IllegalArgumentException {
         modificarDescricao(descricao);
         this.identificador = identificador;
     }
 
-    public void modificarDescricao(String novaDescricao) throws Exception {
+    public void modificarDescricao(String novaDescricao) throws IllegalArgumentException {
         if (novaDescricao.isEmpty() || novaDescricao==null){
-            throw new Exception("Descricao de tarefa invalida");
+            throw new IllegalArgumentException("Descricao de tarefa invalida");
         } else {
             this.descricao = novaDescricao;
         }

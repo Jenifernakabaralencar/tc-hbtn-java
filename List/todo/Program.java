@@ -1,5 +1,5 @@
 public class Program {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws IllegalArgumentException {
         ListaTodo todo = new ListaTodo();
 
         todo.adicionarTarefa(new Tarefa("Ler conteudo aula Lambda", 1));
