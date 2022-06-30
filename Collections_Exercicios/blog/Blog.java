@@ -5,7 +5,7 @@ public class Blog {
     List<Post> postagens;
 
     public Blog() {
-        postagens = new ArrayList<>();
+        postagens = new ArrayList<Post>();
     }
 
     public void adicionarPostagem(Post postagem){
