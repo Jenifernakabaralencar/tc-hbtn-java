@@ -2,7 +2,7 @@ import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.util.*;
 
 public class Blog {
-    List<Post> postagens;
+    private List<Post> postagens;
 
     public Blog() {
         postagens = new ArrayList<Post>();
