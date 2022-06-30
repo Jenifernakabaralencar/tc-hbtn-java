@@ -11,7 +11,7 @@ public class Autor implements Comparable<Autor> {
 
     @Override
     public String toString() {
-        return nome + sobrenome;
+        return nome +" "+ sobrenome;
     }
 
 
