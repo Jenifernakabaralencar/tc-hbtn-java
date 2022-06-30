@@ -1,6 +1,7 @@
 import java.util.Objects;
 
-public class Telefone {
+public class Telefone implements Comparable<Telefone>{
+
     private String codigoArea;
     private String numero;
 
@@ -11,7 +12,15 @@ public class Telefone {
 
     @Override
     public String toString() {
-        return String.format("(%s) %s",codigoArea, numero);
+        return String.format("(%s) %s", codigoArea, numero);
+    }
+
+    public String getCodigoArea() {
+        return codigoArea;
+    }
+
+    public String getNumero() {
+        return numero;
     }
 
     @Override
@@ -27,11 +36,8 @@ public class Telefone {
         return Objects.hash(codigoArea, numero);
     }
 
-    public String getCodigoArea() {
-        return codigoArea;
-    }
-
-    public String getNumero() {
-        return numero;
+    @Override
+    public int compareTo(Telefone o) {
+       return numero.compareTo(o.numero);
     }
 }
