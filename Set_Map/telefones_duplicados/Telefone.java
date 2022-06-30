@@ -6,26 +6,32 @@ public class Telefone {
     private String numero;
 
     public Telefone(String codigoArea, String numero) {
-        this.codigoArea = codigoArea;
         this.numero = numero;
+        this.codigoArea = codigoArea;
     }
 
     @Override
     public String toString() {
-        return String.format("(%s) %s", codigoArea, numero);
+        return "(" + codigoArea + ") " + numero;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         Telefone telefone = (Telefone) o;
-        return codigoArea.equals(telefone.codigoArea) && numero.equals(telefone.numero);
+
+        if (!Objects.equals(codigoArea, telefone.codigoArea)) return false;
+        return Objects.equals(numero, telefone.numero);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(codigoArea, numero);
+        int hash = 7;
+        hash = 31 * hash + Objects.hashCode(this.codigoArea);
+        hash = 31 * hash + Objects.hashCode(this.numero);
+        return hash;
     }
 
 

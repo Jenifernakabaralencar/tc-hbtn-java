@@ -2,41 +2,41 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 
-
 public class ListaTelefonica {
-    HashMap<String, HashSet<Telefone>> listatelefone;
-    public ListaTelefonica() {
-        this.listatelefone = new HashMap<>();
-    }
 
-    public HashSet<Telefone> adicionarTelefone(String nome, Telefone novoTelefone){
-        HashSet<Telefone> lista = listatelefone.get(nome);
-        if (lista == null){
-            lista = new HashSet<Telefone>();
-        }else {
-            if (lista.contains(novoTelefone)){
-                throw new IllegalArgumentException("Telefone jah existente para essa pessoa");
-            }
-            Iterator<HashSet<Telefone>> telefones =  listatelefone.values().iterator();
-            while (telefones.hasNext()){
-                for (Telefone tel: telefones.next()) {
-                    if (tel.equals(novoTelefone)){
-                        throw new IllegalArgumentException("Telefone jah pertence a outra pessoa");
-                    }
-                }
-            }
-        } lista.add(novoTelefone);
-        this.listatelefone.put(nome, lista);
-        return lista;
+    private HashMap<String, HashSet<Telefone>> listaTel;
+    public ListaTelefonica() {
+        this.listaTel = new HashMap<>();
     }
-    public HashSet<Telefone> buscar(String nome){
-        for (String listaTel: this.listatelefone.keySet()) {
-            if (listaTel.equals(nome)){
-                return listatelefone.get(nome);
+    public HashSet<Telefone>  buscar(String nome){
+
+        for (String listaTel : this.listaTel.keySet() ) {
+            if(listaTel.equals(nome)){
+                return this.listaTel.get(listaTel);
             }
         }
         return null;
     }
+    public HashSet<Telefone> adicionarTelefone(String nome, Telefone telefone){
 
+        HashSet<Telefone> numero;
+        numero = listaTel.get(nome);
+        if(numero==null){
+            numero = new HashSet<Telefone>();
+        }
+        if(numero.contains(telefone)){
+            throw new IllegalArgumentException("Telefone jah existente para essa pessoa");
+        }
+        Iterator<HashSet<Telefone>> telefones = listaTel.values().iterator();
+        while (telefones.hasNext()){
+            for(Telefone tel : telefones.next()){
+                if(tel.equals(telefone)){
+                    throw new IllegalArgumentException("Telefone jah pertence a outra pessoa");
+                }
+            }
+        }
+        numero.add(telefone);
+        this.listaTel.put(nome,numero);
+        return numero;
+    }}
 
-}
