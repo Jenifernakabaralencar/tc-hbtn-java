@@ -1,33 +1,41 @@
 import java.util.HashMap;
-import java.util.TreeSet;
+import java.util.HashSet;
+import java.util.Iterator;
+
 
 public class ListaTelefonica {
-    HashMap<String, TreeSet<Telefone>> telefones;
+    HashMap<String, HashSet<Telefone>> listatelefone;
     public ListaTelefonica() {
-        telefones = new HashMap<>();
+        this.listatelefone = new HashMap<>();
     }
 
-    public void adicionarTelefone(String nome, Telefone novoTelefone){
-          TreeSet<Telefone> lista = telefones.get(nome);
+    public HashSet<Telefone> adicionarTelefone(String nome, Telefone novoTelefone){
+        HashSet<Telefone> lista = listatelefone.get(nome);
         if (lista == null){
-            lista = new TreeSet<Telefone>();
+            lista = new HashSet<Telefone>();
         }else {
             if (lista.contains(novoTelefone)){
                 throw new IllegalArgumentException("Telefone jah existente para essa pessoa");
             }
-            for (String chaveNomePessoa: telefones.keySet()) {
-                if (nome == chaveNomePessoa)
-                    continue;
-                if (telefones.get(chaveNomePessoa).contains(novoTelefone)){
-                    throw new IllegalArgumentException("Telefone jah pertence a outra pessoa");
+            Iterator<HashSet<Telefone>> telefones =  listatelefone.values().iterator();
+            while (telefones.hasNext()){
+                for (Telefone tel: telefones.next()) {
+                    if (tel.equals(novoTelefone)){
+                        throw new IllegalArgumentException("Telefone jah pertence a outra pessoa");
+                    }
                 }
             }
         } lista.add(novoTelefone);
-        telefones.put(nome, lista);
+        this.listatelefone.put(nome, lista);
+        return lista;
     }
-    public TreeSet<Telefone> buscar(String nome){
-        return telefones.get(nome);
-
+    public HashSet<Telefone> buscar(String nome){
+        for (String listaTel: this.listatelefone.keySet()) {
+            if (listaTel.equals(nome)){
+                return listatelefone.get(nome);
+            }
+        }
+        return null;
     }
 
 
