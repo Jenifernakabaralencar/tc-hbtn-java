@@ -63,7 +63,7 @@ public class Banco {
                 }else {
                     System.out.printf("Cliente: %s [%d]\n", agencia.getClientes().get(i).getNome(),agencia.getClientes().indexOf(agencia.getClientes().get(i)) + 1);
                     for (Double transacoes : agencia.getClientes().get(i).getTransacoes()) {
-                        System.out.printf(" [%d] valor %.2f\n",agencia.getClientes().get(i).getTransacoes().indexOf(transacoes) + 1,transacoes);
+                        System.out.printf("  [%d] valor %.2f\n",agencia.getClientes().get(i).getTransacoes().indexOf(transacoes) + 1,transacoes);
                     }
                 }
             }
