@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Armazem <T> implements Armazenavel{
 
-    private Map<String, T> itens = new HashMap<>();
+    private Map<String, T> itens = new HashMap<String, T>();
     @Override
     public void adicionarAoInventario(String nome, Object valor) {
         itens.put(nome, (T) valor);
