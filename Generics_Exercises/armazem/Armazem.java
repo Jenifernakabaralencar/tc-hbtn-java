@@ -1,11 +1,8 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Armazem <T> implements Armazenavel{
 
-    private Map<String, T> itens = new HashMap<String, T>();
+    private Map<String, T> itens = new TreeMap<String, T>();
     @Override
     public void adicionarAoInventario(String nome, Object valor) {
         itens.put(nome, (T) valor);
