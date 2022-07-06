@@ -1,11 +1,11 @@
 import java.util.*;
 
-public class Armazem <T> implements Armazenavel{
+public class Armazem <T> implements Armazenavel<T>{
 
     private Map<String, T> itens = new TreeMap<String, T>();
     @Override
-    public void adicionarAoInventario(String nome, Object valor) {
-        itens.put(nome, (T) valor);
+    public void adicionarAoInventario(String nome, T valor) {
+        itens.put(nome, valor);
     }
     @Override
     public T obterDoInventario(String nome) {
