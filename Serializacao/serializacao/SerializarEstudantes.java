@@ -22,6 +22,7 @@ public class SerializarEstudantes<Estudante> {
         }
 
     }
+    @SuppressWarnings("unchecked")
     public List<Estudante> desserializar() {
         try {
             FileInputStream fis = new FileInputStream(this.nomeArquivo);
