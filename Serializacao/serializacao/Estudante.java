@@ -15,7 +15,7 @@ public class Estudante implements Serializable {
 
     @Override
     public String toString() {
-        return String.format("ESTUDANTE { Nome='%s', idade='%d', senha='%s'}", nome, idade, senha);
+        return String.format("ESTUDANTE { nome='%s', idade='%d', senha='%s' }", nome, idade, senha);
     }
 
     public int getIdade() {
